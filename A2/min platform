@@ -1,0 +1,24 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+vector<int> arrival={ 900,910,920,1100,1120};
+vector<int> departure={ 940,1200,950,1130,1140};
+int n= arrival.size();
+
+sort(arrival.begin(), arrival.end());
+sort(departure.begin(), departure.end());
+int platforms=0; int maxplatforms=0;
+int i=0; int j=0;
+
+while(i<n && j<n) {
+if (arrival[i] < departure[j]) {
+  platforms++;
+   maxPlatforms = max(maxPlatforms, platforms);
+    i++;
+  } else {
+   platforms--;
+  j++;}}
+
+ cout << "Minimum number of platforms required = "
+         << maxPlatforms;
+}
